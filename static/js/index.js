@@ -1,4 +1,3 @@
-
 //https://www.eclipse.org/paho/clients/js/
 
 function LED1_On() {
@@ -6,7 +5,7 @@ function LED1_On() {
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("ON");
-    	message.destinationName = "santiago45huebla@unach.edu.ec/t2";
+    	message.destinationName = "santiago45huebla@unach.edu.ec/t1";
     	client.send(message);
   
 }
@@ -14,7 +13,7 @@ function LED1_Off(){
 	//alert("led off");
 	console.log("led off");
 	message = new Paho.MQTT.Message("OFF");
-    	message.destinationName = "santiago45huebla@unach.edu.ec/t2";
+    	message.destinationName = "santiago45huebla@unach.edu.ec/t1";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
@@ -48,9 +47,9 @@ function LED1_Off(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("santiago45huebla@unach.edu.ec/t1");
+    client.subscribe("santiago45huebla@unach.edu.ec/t2");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "santiago45huebla@unach.edu.ec/t2";
+    message.destinationName = "santiago45huebla@unach.edu.ec/t1";
     client.send(message);
 	
   }
@@ -75,3 +74,5 @@ function LED1_Off(){
     document.getElementById("sensor2").innerHTML=la[1];
 
   }
+
+
