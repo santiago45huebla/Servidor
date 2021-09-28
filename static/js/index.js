@@ -34,7 +34,7 @@ function LED1_Off(){
   var options = {
    useSSL: false,
     userName: "santiago45huebla@unach.edu.ec",
-    password: "santiago.huebla",
+    password: "santiago.",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -74,4 +74,3 @@ function LED1_Off(){
     document.getElementById("sensor2").innerHTML=la[1];
 
   }
-
