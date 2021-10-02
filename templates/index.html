@@ -32,33 +32,8 @@
 	}
 	*/
 	</script>
+	<script src="/static/js/index.js"></script>
 <center>
-
-<center>
-	<input style="color: blue; font-size: 20px;" type="file" id="file-input" />
-	<h1 style="color: blue;" >Contenido del archivo:</h1>
-	<pre id="contenido-archivo" style="color: blue; font-size: 20px;" ></pre>
-</center>
-
-<script>
-function leerArchivo(e) {
-  var archivo = e.target.files[0];
-
-  var lector = new FileReader();
-  lector.onload = function(e) {
-    var contenido = e.target.result;
-    mostrarContenido(contenido);
-  };
-  lector.readAsText(archivo);
-}
-
-function mostrarContenido(contenido) {
-  document.getElementById('contenido-archivo').innerHTML=contenido;
-}
-document.getElementById('file-input').addEventListener('change', leerArchivo, false);
-</script>
-
-
 
 </body>
 </html>
