@@ -7,11 +7,8 @@ function LED1_On() {
   message = new Paho.MQTT.Message("ON");
       message.destinationName = "santiago.huebla@unach.edu.ec/test";
       client.send(message);
-      
-
+  
 }
-
-
 function LED1_Off(){  
   //alert("led off");
   console.log("led off");
@@ -20,8 +17,16 @@ function LED1_Off(){
       client.send(message);
   //document.getElementById("sensor").innerHTML="led off";
 }
-    
-  
+function LED1(){  
+  //alert("led off");
+  console.log("led off");
+  message = new Paho.MQTT.Message("BTN");
+      message.destinationName = "santiago.huebla@unach.edu.ec/test";
+      client.send(message);
+  //document.getElementById("sensor").innerHTML="led off";
+}
+
+
 
 
 
@@ -54,7 +59,7 @@ function LED1_Off(){
     message = new Paho.MQTT.Message("hola desde la web");
     message.destinationName = "santiago.huebla@unach.edu.ec/test";
     client.send(message);
-
+  
   }
 
   function doFail(e){
@@ -72,10 +77,10 @@ function LED1_Off(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-    var men=message.payloadString.split("-");
-    document.getElementById("sensor").innerHTML=men[0];
-    document.getElementById("sensor1").innerHTML=men[1];
-
+    var m=message.payloadString.split("*")
+    document.getElementById("sensor").innerHTML=m[0];
+    document.getElementById("sensor1").innerHTML=m[1];
+    document.getElementById("historial").innerHTML=m[2];
   }
 
 
